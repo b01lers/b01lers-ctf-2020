@@ -1,0 +1,202 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://sprites/victims/victim-8.png" type="Texture" id=1]
+[ext_resource path="res://sprites/victims/victim-5.png" type="Texture" id=2]
+[ext_resource path="res://sprites/victims/victim-6.png" type="Texture" id=3]
+[ext_resource path="res://sprites/victims/victim-7.png" type="Texture" id=4]
+[ext_resource path="res://sprites/victims/victim-3.png" type="Texture" id=5]
+[ext_resource path="res://sprites/victims/victim-2.png" type="Texture" id=6]
+[ext_resource path="res://sprites/victims/victim-4.png" type="Texture" id=7]
+[ext_resource path="res://sprites/victims/victim-1.png" type="Texture" id=8]
+[ext_resource path="res://Victim2.gd" type="Script" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Death1"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skins/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Death2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skins/Sprite2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Death3"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skins/Sprite3:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Death4"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skins/Sprite4:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Death5"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skins/Sprite5:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Death6"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skins/Sprite6:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Death7"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skins/Sprite7:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Death8"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skins/Sprite8:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 3.02475, 8.01013 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 4.04313, 8.10712 )
+
+[node name="Victim" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Death1 = SubResource( 1 )
+anims/Death2 = SubResource( 2 )
+anims/Death3 = SubResource( 3 )
+anims/Death4 = SubResource( 4 )
+anims/Death5 = SubResource( 5 )
+anims/Death6 = SubResource( 6 )
+anims/Death7 = SubResource( 7 )
+anims/Death8 = SubResource( 8 )
+
+[node name="Skins" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Skins"]
+visible = false
+texture = ExtResource( 8 )
+vframes = 2
+
+[node name="Sprite2" type="Sprite" parent="Skins"]
+visible = false
+texture = ExtResource( 6 )
+vframes = 2
+
+[node name="Sprite3" type="Sprite" parent="Skins"]
+visible = false
+texture = ExtResource( 5 )
+vframes = 2
+
+[node name="Sprite4" type="Sprite" parent="Skins"]
+texture = ExtResource( 7 )
+vframes = 2
+
+[node name="Sprite5" type="Sprite" parent="Skins"]
+visible = false
+texture = ExtResource( 2 )
+vframes = 2
+
+[node name="Sprite6" type="Sprite" parent="Skins"]
+visible = false
+texture = ExtResource( 3 )
+vframes = 2
+
+[node name="Sprite7" type="Sprite" parent="Skins"]
+visible = false
+texture = ExtResource( 4 )
+vframes = 2
+
+[node name="Sprite8" type="Sprite" parent="Skins"]
+visible = false
+texture = ExtResource( 1 )
+vframes = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 9 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 10 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
