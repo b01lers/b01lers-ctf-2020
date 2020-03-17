@@ -35,16 +35,18 @@ static const u8 data_segment_data_1[] = {
   i0 = 222u;
 ```
 
-- 1648: 0x90 ^ 222  = 'N'
-- 1649: 0x69 ^ 73   = ' '
-- 1650: 0x42 ^ 5    = 'G'
-- 1651: 0x37 ^ 88   = 'o'
-- 1652: 0x13 ^ 125  = 'n'
-- 1653: 0x08 ^ 114  = 'z'
-- 1654: 0x10 ^ 113  = 'a'
-- 1655: 0x09 ^ 101  = 'l'
-- 1656: 0x08 ^ 109  = 'e'
-- 1657: 0x07 ^ 125  = 'z'
+```
+1648: 0x90 ^ 222  = 'N'
+1649: 0x69 ^ 73   = ' '
+1650: 0x42 ^ 5    = 'G'
+1651: 0x37 ^ 88   = 'o'
+1652: 0x13 ^ 125  = 'n'
+1653: 0x08 ^ 114  = 'z'
+1654: 0x10 ^ 113  = 'a'
+1655: 0x09 ^ 101  = 'l'
+1656: 0x08 ^ 109  = 'e'
+1657: 0x07 ^ 125  = 'z'
+```
 
 
 ### Running
@@ -61,9 +63,9 @@ static const u8 data_segment_data_1[] = {
 ## Let's check out the website
 - Just gives a basic http authorization response
 - Quick note from [https://en.wikipedia.org/wiki/Basic_access_authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
-- Header is sent back in the form:
+- Header is sent in the form:
     - Authorization: Basic base64encoded(username:password)
-- With this let's go back the webassembly
+- With this let's go back to the webassembly
 
 
 ## Webassembly... Again
@@ -84,15 +86,10 @@ $ node alien_tech.js $(echo -n "N Gonzalez" | base64) $(echo -n "N Gonzalez" | b
 - No longer -2, it's -1
 - Let's send this to the server
 
-```bash
-$ echo -n "N Gonzalez" | base64
-TiBHb256YWxleg==
-```
-
 
 ## Starting with authentication
 ```bash
-$ curl -H "Authorization: Basic TiBHb256YWxleg==" -v web.ctf.b01lers.com:1005
+$ curl -H "Authorization: Basic $(echo -n 'N Gonzalez' | base64)" -v web.ctf.b01lers.com:1005
 *   Trying 35.211.156.94:1005...
 * TCP_NODELAY set
 * Connected to web.ctf.b01lers.com (35.211.156.94) port 1005 (#0)
@@ -162,7 +159,7 @@ Connection: keep-alive
 ### Getting the password
 - Maybe we can brute force the password using the progress header.
 - It works!
-- Thankfully the flag is relatively short at 30 characters so it's only 2308 requests (for just printable characters). See [solve.py](solve.py) for the python solve which takes about 9 minutes in 2308requests.
+- Thankfully the flag is relatively short at 30 characters so it's only 2308 requests (for just printable characters). See [solve.py](solve.py) for the python solve which takes about 9 minutes in 2308 requests.
 
 
 # Flag

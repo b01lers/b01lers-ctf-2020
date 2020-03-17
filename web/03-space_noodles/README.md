@@ -63,18 +63,17 @@ Put the dots???
         - Which planet got blown up in the Death Star test?
         - Alderaan
     - s
-        - The _____ core from Portal 2 is famous for saying this: "Oh oh oh. This is _____! I'm in ____!".
+        - The ____ core from Portal 2 is famous for saying this: "Oh oh oh. This is _____! I'm in _____!".
         - Space
     - t
         - Which Warhammer 40k species' motto is 'For the Greater Good!'?
         - Tau
     - e
-        - Star trek something
+        - In Star Trek, the U.S.S __________ registry number NX-01. This ship is the first to break the Warp 5 barrier.
         - Enterprise
     - s
         - What is the name of the ship in *Aliens*?
         - Sulaco
-
 - `tastes`
 
 
