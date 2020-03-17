@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to Earth</title>
+  </head>
+  <body>
+    <h1>SHOOT IT</h1>
+    <p>You've got the bogey in your sights, take the shot!</p>
+    <img
+      src="{{ url_for('static', filename='img/locked.png') }}"
+      alt="locked on"
+      style="width:60vw;"
+    />
+    </br>
+    <button onClick="window.location='/die/'">Take the shot</button>
+    <!-- <button onClick="window.location='/shoot/'">Take the shot</button> -->
+  </body>
+</html>
