@@ -5,6 +5,8 @@
 | Point Value | 300 |
 | Description | Reversing an assembler |
 
+*Warning*: Yes, the intended solution to this challenge is "read and understand the source code of flex (https://github.com/westes/flex) and bison (https://github.com/akimd/bison). Yes, that's some bullshit. Nobody solved it, if it makes you feel better. I was barely able to solve it, and I *wrote* the challenge. Anyway, let's dive in.
+
 This challenge is an introduction to the challenge railed. I added it because I felt that the two components in railed were too much for one challenge and that players should get 300 points for getting to the halfway point. This is that point! 
 
 So we get three binaries. We're told that we don't need to RE railed at all, binary is literally just...data. Prerailed is an ELF and we're not told not to touch that one, so let's crack it open and figure out how it works.
