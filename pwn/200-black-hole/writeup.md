@@ -1,12 +1,17 @@
 # Black Hole
 
-Points: 200
 
-Description: We flew too close to the black hole! Help us escape!
+## Category
+PWN
+## Points:
+200
+## Description:
+Dave took a nap while flying home last Tuesday. When he woke up he was stuck. Save Dave
+NOTE: Challenge is running in an Ubuntu 18.04 docker container.
+## Creator:
+nsnc
 
-Creator: nsnc
-
-# Solve
+## Solve
 
 In this program, you are trapped by a black hole, and need to find a way to escape it.
 ```

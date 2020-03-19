@@ -1,6 +1,15 @@
-Author: maczilla
-Category: Pwn
-Points: 100
+# Meshuggah
+
+## Category
+PWN
+## Points:
+100
+## Description:
+Dave escaped security, but only by crashing directly into an asteroid. Don't worry, he's still alive, but he's going to need a new starship
+## Creator:
+maczilla
+
+## Solve
 
 ```c
 #include <stdbool.h>

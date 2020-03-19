@@ -1,3 +1,16 @@
+# Kobayashi
+
+## Category
+PWN
+## Points:
+200
+## Description:
+Dave got a VR headset and is unable to take it off. It's like he is trapped in an impossible game. Can you help him win so he can see his son, Davey
+## Creator:
+maczilla
+
+## Solve
+
 This challenge was inspired by an impossible game - Kobayashi Maru from Startrek. If you run the code (or read it all) you will see that no matter what you do, in the end you lose. Lets dive into the binary and code.
 
 ```

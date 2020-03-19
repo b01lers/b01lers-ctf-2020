@@ -1,14 +1,20 @@
 # Blind Piloting
 
-Points: 200 & 200 (two flags)
+## Category
+PWN
+## Points:
+flag1: 200, flag2: 200
+## Description:
+How well are you able to fly blindfolded?
+## Creator:
+nsnc
 
-Description: How well are you able to fly blindfolded?
+## Solve
+
 
 Part one: Overwrite a LSB
 
 Part two: Gain RCE
-
-Creator: nsnc
 
 # Part 1
 

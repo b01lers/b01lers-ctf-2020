@@ -1,12 +1,15 @@
 # Elon Musk's Tweet Raider
 
-Points: 100
+## Category
+PWN
+## Points:
+100
+## Description:
+Dave bought a self driving starship! Ever since he has been strangely enthralled with Mlon Eusk's Tweets. Help Dave get a response from Mlon himself
+## Creator:
+nsnc
 
-Description: Is your tweet dank enough?
- 
-Creator: nsnc
-
-# Solve
+## Solve
 
 This program is vulnerable to a format string attack:
 ```c
