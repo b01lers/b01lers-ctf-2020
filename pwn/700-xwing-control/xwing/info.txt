@@ -1,0 +1,24 @@
+Vulnerable service running on a machine
+
+All users get is a video that is a "challenge teaser trailer."
+
+4 flags: 1 for each part: Logging in, Arriving at the Death Star, Destroying Death Star, Exploiting program.
+
+Images to end up in video:
+ - https://i.imgur.com/jXkapMz.png
+ - https://i.imgur.com/waBbtNS.png
+ - https://i.imgur.com/oNiIBJW.png
+ - https://i.imgur.com/umk3V9O.png
+ - https://i.imgur.com/FS0bN0H.png
+
+Old VIDEO: https://drive.google.com/open?id=1lGviy2Rdlas2zsljbqXH-KOv4jtq_NFf
+
+Filmed with:
+━━┫ md5sum xwing.dist
+80f882ed74ded021f51010c44522a4fe  xwing.dist
+
+Correct Video https://drive.google.com/open?id=1ah6PGXwlKmXIUlCIaSeX4v1_s6M67_0t
+ac5e3fc42e6928dbf92511cae18a8ad3  xwing.dist
+
+
+**THIS SHOULD BE HOSTED ON A SEPERATE VM.**
