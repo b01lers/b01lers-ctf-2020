@@ -1,5 +1,7 @@
 Author: A0su
+
 Category: Crypto
+
 Points: 100
 
 # Multibyte Rolling XOR Challenge
