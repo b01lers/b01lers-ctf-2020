@@ -1,0 +1,2 @@
+docker build . -t armstrong
+docker run --name armstrong --restart always -itd -p 4001:4001 armstrong
