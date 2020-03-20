@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to Earth</title>
+  </head>
+  <body>
+    <h1>CHASE!</h1>
+    <p>
+      You managed to chase one of the enemy fighters, but there's a wall coming
+      up fast!
+    </p>
+    <button onclick="left()">Left</button>
+    <button onclick="right()">Right</button>
+
+    <img
+      src="{{ url_for('static', filename='img/Canyon_Chase_16.png') }}"
+      alt="canyon chase"
+      style="width:60vw;"
+    />
+    <script>
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      async function dietimer() {
+        await sleep(1000);
+        die();
+      }
+
+      function die() {
+        window.location = "/die/";
+      }
+
+      function left() {
+        window.location = "/die/";
+      }
+
+      function leftt() {
+        window.location = "/leftt/";
+      }
+
+      function right() {
+        window.location = "/die/";
+      }
+
+      dietimer();
+    </script>
+  </body>
+</html>

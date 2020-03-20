@@ -1,0 +1,13 @@
+<htlm>
+
+,,,,,,,,,<search> <-- comment for search --!>:
+{% if search == 'flag' %}
+  <query> good search</query>
+  results: <p>_good_in_s</p>:w
+
+{% elif search %}
+  <query> {{ search }} is not a good search, please use this one instead: 'flag' <try>
+{% else %}
+  ERROR </> search=null</end>
+{% endif %}
+</html>
