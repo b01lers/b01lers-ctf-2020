@@ -1,0 +1,4 @@
+WEB Scrambled (200 pts)
+We're receiving a transmission, but we can't understand it, please give us a hand!
+
+[web.ctf.b01lers.com:1002](web.ctf.b01lers.com:1002)

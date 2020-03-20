@@ -1,0 +1,25 @@
+{
+  "name": "04-space_junk",
+  "version": "1.0.0",
+  "description": "ctf challenge",
+  "main": "server.js",
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-validator": "^6.4.0",
+    "mysql": "^2.18.1",
+    "nunjucks": "^3.2.0",
+    "zombie": "^6.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "yes"
+  },
+  "author": "PHSC138",
+  "license": "ISC"
+}

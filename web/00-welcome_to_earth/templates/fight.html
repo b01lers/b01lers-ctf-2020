@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to Earth</title>
+    <script src="{{ url_for('static', filename='js/fight.js') }}"></script>
+  </head>
+  <body>
+    <h1>AN ALIEN!</h1>
+    <p>What do you do?</p>
+    <img
+      src="{{ url_for('static', filename='img/alien.png') }}"
+      alt="door"
+      style="width:60vw;"
+    />
+    </br>
+    <input type="text" id="action">
+    <button onClick="check_action()">Fight!</button>
+  </body>
+</html>

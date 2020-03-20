@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Space Junk</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="/static/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/static/css/space_junk.css"
+    />
+    <script src="/static/js/jquery.min.js" type="text/javascript"></script>
+    <script src="/static/js/popper.min.js" type="text/javascript"></script>
+    <script src="/static/js/bootstrap.min.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <!-- Topbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/"
+                >Home</a
+              >
+            </li>
+
+            <li class="nav-item active">
+              <a class="nav-link" href="/tt">Top Ten <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item dropdown">
+              {% if auth == 0 %}
+              <a
+                class="nav-link dropdown-toggle disabled"
+                href="/moderator"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Moderator Stuff
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item disabled" href="/moderator/post">Post</a>
+                <a class="dropdown-item disabled" href="/moderator/status">Status</a>
+              {% else %}
+              <a
+                class="nav-link dropdown-toggle"
+                href="/moderator"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Moderator Stuff
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/moderator/post">Post</a>
+                <a class="dropdown-item" href="/moderator/status">Status</a>
+              {% endif %}
+              </div>
+            </li>
+
+            <li class="nav-item">
+              {% if auth == 2 %}
+              <a class="nav-link" href="/admin">Admin Stuff</a>
+              {% else %}
+              <a class="nav-link disabled" href="/admin">Admin Stuff</a>
+              {% endif %}
+            </li>
+          </ul>
+
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              {% if auth == 0 %}
+              <a class="nav-link" href="/login">Login</a>
+              {% else %}
+              <a class="nav-link" href="/logout">Logout</a>
+              {% endif %}
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div id="content">
+        <div class="jumbotron text-center wide">
+          <h1 class="display-1">Top Ten</h1>
+        </div>
+
+        <div class="container">
+          <h4>
+            Top Ten worst pieces of space trash
+          </h4>
+          <!-- 10 through 2 info found from https://www.space.com/9708-worst-space-debris-events-time.html -->
+          <ol reversed>
+            <li>
+              <div class="tt">
+                <img src="/static/img/tt_10.jpg" />
+                <p>
+                  The U.S.Navy intercepted its defunct spy satellite USA-193 on Feb. 20, 2008, sending a trail of debris that some amateur astronomers reported falling over the northwestern United States and Canada. Department of Defense officials said they hadn't recovered any debris larger than a football.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <div class="tt">
+                <img src="/static/img/tt_9.jpg" />
+                <p>
+                  A woman in Turley, Oklahoma, got a noggin-knock in January 1997 when she was struck with a lightweight fragment of charred woven material. Shewas not injured. The sky junk was identified as debris from a Delta 2 booster, which reentered the Earth'satmosphere on Jan. 22, 1997. Other debris from that booster included a steel propellant tank and a titanium pressure sphere.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <div class="tt">
+                <img src="/static/img/tt_8.jpg" />
+                <p>
+                  Several mysterious spheres turned up in Australiain the 1960s, with some speculating these balls could be connected with UFO phenomenon. One such titanium sphere was spotted in Merkanooka, Western Australia. Dubbed the Merkanookaball, the metal sphere was later identified as a tank used for drinking water in the Gemini V spacecraft, which was launched on Aug. 21, 1965, and reentered the atmosphere and splashed down into the Atlantic Oceanon Aug. 29 that year.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <div class="tt">
+                <img src="/static/img/tt_6.jpg" />
+                <p>
+                  On Jan. 21, 2001, a Delta2 third stage, known as a PAM-D (Payload Assist Module-Delta), reenteredthe atmosphere over the Middle East. Its titanium motor casing, weighing about 154 pounds (70 kilograms), slammed down in Saudi Arabia, while a titanium pressurant tank landed near Seguin, Texas, and the main propellant tank plunked down near Georgetown, Texas.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <div class="tt">
+                <img src="/static/img/tt_4.jpg" />
+                <p>
+                  After completing 51,658 orbits around Earth, the Compton Gamma Ray Observatory was intentionally deorbited due to a crippled gyroscope on June 4,2000. As the spacecraft tumbled through Earth's atmosphere, its solar panels and antennas were thought to pop off first, while other parts likely melted. About 13,227 pounds (6,000 kilograms) of debris from the observatory splashed down into the Pacific Ocean southeast of Hawaii.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <div class="tt">
+                <img src="/static/img/tt_2.jpg" />
+                <p>
+                  Weighing in at 77 tons (70,000 kilograms), the first and only solely-U.S. spacestation Skylab launched into orbit on May 14, 1973. Its orbiting operationscame to a premature end on July 11, 1979, when Skylab plummeted through theatmosphere, sending chunks of debris raining down over an area stretching fromthe Southeastern Indian Ocean across a sparsely populated section of Western Australia.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <div class="tt">
+                <img src="/static/img/tt_5.jpg" />
+                <p>
+                  On Feb. 1, 2003, during its return to Earth, Space Shuttle Columbia disintegrated on reentry, killing seven astronauts. The catastrophic, lethal accident shed thousands of pieces of debris across a 28,000 square mile (72,520 square kilometers) area in eastern Texas and western Louisiana. More than 80,000 recovered pieces were stored for follow-up research.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <div class="tt">
+                <img src="/static/img/tt_3.jpg" />
+                <p>
+                  In the world of space litter, the heavyweight champ would have to be Mir, heftier in its day than any object (except the moon) to orbit Earth. The 15-year-old Russian space station began its suicidal nosedive on March 23, 2001, as it reentered Earth's atmosphere above the Pacific Ocean near Fiji. Though most of the station, weighing 286,600 pounds (130,000 kilograms), burned up in the atmosphere, about 1,500 fragments reached Earth's surface. Beach goers in Nadi, Fiji, snapped photos of blazing bits of Mir debris and there were reports of sonic booms caused by heavy debris.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <div class="tt">
+                <img src="/static/img/tt_7.jpg" />
+                <p>
+                  A secret Soviet-navy satellite called Cosmos 954, which was launched on Sept. 18, 1977, spiraled out of control. The spy radar antennas each sported a compact nuclear reactor, making the reentry one of the most frightening to date for people on the ground. On Jan. 24, 1978, Cosmos 954 reentered over Canada and shed debris across the frozen ground of the Canadian Arctic. Following the crash, the U.S. and Canada conducted overflights of the area and associated cleanup efforts.
+                </p>
+              </div>
+            </li>
+
+            <!-- This comment IS NOT SERIOUS, it is just rivalry banter. -->
+            <li>
+              <div class="tt">
+                <img src="/static/img/iu.png" />
+                <p>
+                  The worst piece of space junk happens to be this particular university. Some may question how this is rated higher than the nuclear waste, but let me assure you, this one is way worse. This continously creates toxic material in the form of Indiana University influenced students that then spread out globally.
+                </p>
+              </div>
+            </li>
+
+
+          </ol>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
