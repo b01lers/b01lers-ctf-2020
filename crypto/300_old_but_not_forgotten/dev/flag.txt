@@ -1,0 +1,10 @@
+# this was done by hand :o
+
+ptxt: PCTF{OLD_KNOWLEDGE_MAKES_YOU_RICH$$}
+
+unused letters: BFJPQTVXZ
+scramble:       ZXJFQTVBP 
+inv map to:     OEA_ICKRD
+
+ctxt:      ZLPFVNZWLXPGXFMJVXSFYZUFBQTH$$
+
