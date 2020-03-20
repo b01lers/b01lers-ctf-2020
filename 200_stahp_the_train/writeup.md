@@ -2,19 +2,19 @@ After entering your social security /national ID number, the binary will exit if
 
 
 To defeat this, we can change the result of the comparison at address 0x5555555565af
-![GDB patch failed to load](images/patch.png)
+![GDB patch failed to load](rev/images/patch.png)
 
 After this, calling HELP leaks the key (AKHBAAR) and part of the flag
 
-![Keyfile failed to load](images/key.png)
+![Keyfile failed to load](rev/images/key.png)
 
 To get the rest of the encoded flag to print, we must call HELP again patch the check at 0x55555555660b
 
-![Win patch failed to load](images/win_patch.png)
+![Win patch failed to load](rev/images/win_patch.png)
 
 Doing so will then give us the remaining flag chunks
 
-![Win patch result failed to load](images/win_patch_result.png)
+![Win patch result failed to load](rev/images/win_patch_result.png)
 
 These flag chunks are the encoded output of a rolling XOR of the key AKHBAAR and the flag
 The code for undoing this is as follows
