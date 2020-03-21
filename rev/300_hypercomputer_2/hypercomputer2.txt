@@ -1,0 +1,15 @@
+hypercomputer 2     (created by dm)
+---------------
+
+Think, Commander,
+  before you enter
+what is needed -
+  and when that's run,
+ones and zeroes  
+  boogie to your will:
+Droids thwarted / 
+  your flag'll be dumped.
+
+Users get:
+  - hypercomputer2 (binary)
+  - a netcat address/port (again as with hypercomputer1, use /server and its files to run a local server)

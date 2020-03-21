@@ -1,0 +1,11 @@
+set exec-wrapper env 'LD_PRELOAD=./mylib.so'
+set pagination off
+#set logging file step6.log
+#set logging on
+break *0x8001ddc
+run
+#x
+print/d $r12d
+#y
+print/d $eax
+quit

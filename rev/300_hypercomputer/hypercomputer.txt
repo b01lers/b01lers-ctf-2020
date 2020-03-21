@@ -1,0 +1,13 @@
+hypercomputer   (created by dm)
+-------------
+
+There is always hope, Commander,
+until the ship annihilates -
+rig the hybrid simulator
+if you seek good coordinates.
+(Needs patience... I'll skip the lecture,
+ good we have real architecture!)
+
+Users get:
+  - hypercomputer (binary)
+  - a netcat address/port (use the /server folder to run a local server)
