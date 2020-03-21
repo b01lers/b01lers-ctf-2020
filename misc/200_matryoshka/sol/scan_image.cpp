@@ -131,7 +131,7 @@ int main(int argc, char* argv[])
 			std::cout << "EC Level: " << TextUtfEncoding::ToUtf8(errLevel) << "\n";
 		}
                 // print raw bytes - added by DM 2020/03/09
-                // but these are not raw, already converted to UTF
+                // but these are raw, not already converted to UTF
                 const ByteArray raw = result.rawBytes();
                 const unsigned char* rawBytes = (unsigned char*) raw.charPtr();
                 std::cout << "Raw bytes (incl. encoding data): \n";
