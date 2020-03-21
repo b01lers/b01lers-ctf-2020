@@ -9,5 +9,5 @@ if you seek good coordinates.
  good we have real architecture!)
 
 Users get:
-  - hypercomputer (binary)
+  - hypercomputer-SIM (binary)
   - a netcat address/port (use the /server folder to run a local server)
