@@ -1,0 +1,32 @@
+
+
+
+     1   2   3   4   5
+   +---+---+---+---+---+  }
+   | N | T | X | A | C |  |   
+   |---+---+---+---+---|  |     
+ 6 | W | H | I | L | E |  |
+   |---+---+---+---+---|  \
+ 7 | O | R | D | E | R |   -> WKYQMRKNQLMESZLBSTIKSIPTSLELQLEFEHZZQPNBEZKNOTKJVDHWWRVAULIHXUTYUIHCJMEIXTHDVWCANBMHS
+   |---+---+---+---+---|  /   
+ 8 | H | E | A | R | T |  |
+   |---+---+---+---+---|  |
+ 9 | C | E | R | T | S |  |
+   +---+---+---+---+---+  }
+
+
+ 1: (ascii85): Spelled backwards: command to adjust what belongs to whom on UNIX.
+ 2: (ROT13): THE SMALLEST RSA EXPONENT EVER IN WIDESPREAD USE.
+ 3: (hex-ASCII): Backwards: two for binary, ten for decimal, and sixteen for hex. 
+ 4: (Atbash): POSSIBLY THE FIRST JAVASCRIPT FUNCTION YOU EVER CALLED.
+ 5: (sorted characters): Electronic documents that prove ownership of keys, reduced to five letters.
+ 6: (Caesar; +3): COMMON RESERVED WORD IN C++ AND PYTHON.
+ 7: (base64): Modern crypto especially likes groups of prime _____.
+ 8: (Morse code; o=short, O=long, 0=gap): FIRST HALF OF A FAMOUS OPENSSL VULNERABILITY.
+ 9: (tap encoding, think flip phones): SAME AS ANSWER NUMBER FIVE.
+ 
+Decoded message with 5x5 Hill's cipher using crossword matrix as key (ciphertext = matrix * plaintext):
+
+   MESSAGEXISXNOXBLACKXSQUARESXAMIGOXSEPARATEDXBYXSPACEXANDXENCLOSEDXINXTHEXUSUALXFORMAT
+  
+=> pctf{no black squares amigo}

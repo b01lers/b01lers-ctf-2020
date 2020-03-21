@@ -1,0 +1,8 @@
+What the elf    (created by dm)
+------------
+
+
+This file I stole from Elrond is supposed to print the flag. It doesn't run though...
+
+Users get:
+  - whattheelf (binary)

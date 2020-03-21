@@ -1,0 +1,7 @@
+Old but not forgotten  (created by dm)
+
+Help! The machine copied two lines onto each card, and destroyed the originals. Can you reassemble my program 
+and run it, please? I dropped the stack, so some of these cards may be out of order...
+
+Users get:
+  - img[1-9].jpg

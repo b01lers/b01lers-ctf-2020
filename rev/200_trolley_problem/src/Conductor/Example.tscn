@@ -1,0 +1,520 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://TestingWorld.gd" type="Script" id=1]
+[ext_resource path="res://addons/dialogue_tree/scripts/dialogue.gd" type="Script" id=2]
+[ext_resource path="res://addons/dialogue_tree/assets/Icon.png" type="Texture" id=3]
+[ext_resource path="res://addons/dialogue_tree/assets/ResIcon.png" type="Texture" id=4]
+[ext_resource path="res://addons/dialogue_tree/resource/dialogue_tree.gd" type="Script" id=5]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "New Anim"
+length = 1.0
+loop = false
+step = 0.1
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "New Anim2"
+length = 1.0
+loop = false
+step = 0.1
+
+[sub_resource type="Resource" id=3]
+
+script = ExtResource( 5 )
+__meta__ = {
+"_editor_icon": ExtResource( 4 )
+}
+connections = [ {
+"from": "BasicDialogue",
+"from_port": 0,
+"to": "EndNode",
+"to_port": 0
+}, {
+"from": "StartNode",
+"from_port": 0,
+"to": "ChoiceDialogue",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue",
+"from_port": 0,
+"to": "BasicDialogue",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue",
+"from_port": 1,
+"to": "BasicDialogue",
+"to_port": 0
+} ]
+Nodes = [ {
+"filename": "res://addons/dialogue_tree/scenes/EndNode.tscn",
+"name": "EndNode",
+"rect_size_x": 80.0,
+"rect_size_y": 55.0,
+"rect_x": 1055.0,
+"rect_y": 310.0
+}, {
+"filename": "res://addons/dialogue_tree/scenes/StartNode.tscn",
+"name": "StartNode",
+"rect_size_x": 87.0,
+"rect_size_y": 55.0,
+"rect_x": 248.0,
+"rect_y": 156.0
+}, {
+"Actor": "",
+"Dialogue": "",
+"RefName": "test2",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 565.0,
+"rect_y": 280.0
+}, {
+"Conditonal": false,
+"RefName": "Test",
+"choices": [ {
+"Conditional": "",
+"Dialogue": "",
+"ToolTip": ""
+}, {
+"Conditional": "",
+"Dialogue": "",
+"ToolTip": ""
+}, {
+"Conditional": "",
+"Dialogue": "",
+"ToolTip": ""
+} ],
+"filename": "res://addons/dialogue_tree/scenes/ChoiceDialogue.tscn",
+"name": "ChoiceDialogue",
+"rect_size_x": 210.0,
+"rect_size_y": 168.0,
+"rect_x": 440.0,
+"rect_y": 77.0
+} ]
+DialogueTree = {
+"dialogue": [ {
+"Actor": "",
+"Dialogue": "",
+"NodeName": "BasicDialogue",
+"Ref": "test2",
+"next": "End"
+}, {
+"Choices": [ {
+"Conditional": "",
+"Dialogue": "",
+"ToolTip": "",
+"next": 0
+}, {
+"Conditional": "",
+"Dialogue": "",
+"ToolTip": "",
+"next": 0
+}, {
+"Conditional": "",
+"Dialogue": "",
+"ToolTip": ""
+} ],
+"NodeName": "ChoiceDialogue",
+"Ref": "Test"
+} ],
+"start_index": 1
+}
+
+[sub_resource type="Resource" id=4]
+
+script = ExtResource( 5 )
+__meta__ = {
+"_editor_icon": ExtResource( 4 )
+}
+connections = [ {
+"from": "ChoiceDialogue",
+"from_port": 0,
+"to": "BasicDialogue2",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue",
+"from_port": 2,
+"to": "BasicDialogue2",
+"to_port": 0
+}, {
+"from": "BasicDialogue3",
+"from_port": 0,
+"to": "ChoiceDialogue2",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue2",
+"from_port": 1,
+"to": "BasicDialogue5",
+"to_port": 0
+}, {
+"from": "BasicDialogue2",
+"from_port": 0,
+"to": "BasicDialogue6",
+"to_port": 0
+}, {
+"from": "BasicDialogue6",
+"from_port": 0,
+"to": "EndNode",
+"to_port": 0
+}, {
+"from": "BasicDialogue4",
+"from_port": 0,
+"to": "EndNode",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue2",
+"from_port": 0,
+"to": "BasicDialogue4",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue",
+"from_port": 1,
+"to": "BasicDialogue3",
+"to_port": 0
+}, {
+"from": "StartNode",
+"from_port": 0,
+"to": "BasicDialogue",
+"to_port": 0
+}, {
+"from": "BasicDialogue",
+"from_port": 0,
+"to": "ChoiceDialogue",
+"to_port": 0
+} ]
+Nodes = [ {
+"filename": "res://addons/dialogue_tree/scenes/EndNode.tscn",
+"name": "EndNode",
+"rect_size_x": 80.0,
+"rect_size_y": 55.0,
+"rect_x": 1554.0,
+"rect_y": 85.0
+}, {
+"filename": "res://addons/dialogue_tree/scenes/StartNode.tscn",
+"name": "StartNode",
+"rect_size_x": 87.0,
+"rect_size_y": 55.0,
+"rect_x": 87.0,
+"rect_y": 139.0
+}, {
+"Actor": "",
+"Dialogue": "That's awesome to hear!",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue2",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 914.0,
+"rect_y": 5.0
+}, {
+"Conditonal": false,
+"RefName": "",
+"choices": [ {
+"Conditional": "",
+"Dialogue": "Not really.",
+"ToolTip": ""
+}, {
+"Conditional": "",
+"Dialogue": "Yeah, lets talk about it.",
+"ToolTip": ""
+} ],
+"filename": "res://addons/dialogue_tree/scenes/ChoiceDialogue.tscn",
+"name": "ChoiceDialogue2",
+"rect_size_x": 210.0,
+"rect_size_y": 141.0,
+"rect_x": 1014.0,
+"rect_y": 225.0
+}, {
+"Actor": "",
+"Dialogue": "Ah.. that's okay. Lemme know if you need anything.",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue4",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 1294.0,
+"rect_y": 245.0
+}, {
+"Actor": "",
+"Dialogue": "Anything on your mind?",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue5",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 1294.0,
+"rect_y": 385.0
+}, {
+"Actor": "",
+"Dialogue": "Testing sequental.",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue6",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 1214.0,
+"rect_y": 5.0
+}, {
+"Actor": "",
+"Dialogue": "Wanna talk about it?",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue3",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 794.0,
+"rect_y": 225.0
+}, {
+"Conditonal": false,
+"RefName": "",
+"choices": [ {
+"Conditional": "\"{test}\" == \"hello2\"",
+"Dialogue": "I'm okay.",
+"ToolTip": "Test must be hello2"
+}, {
+"Conditional": "false",
+"Dialogue": "I'm not feeling great.",
+"ToolTip": "This is disabled"
+}, {
+"Conditional": "true",
+"Dialogue": "I'm fantastic!",
+"ToolTip": "This is not disabled"
+} ],
+"filename": "res://addons/dialogue_tree/scenes/ChoiceDialogue.tscn",
+"name": "ChoiceDialogue",
+"rect_size_x": 246.0,
+"rect_size_y": 177.0,
+"rect_x": 478.0,
+"rect_y": 180.0
+}, {
+"Actor": "",
+"Dialogue": "Why hello. How are you today?",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 273.0,
+"rect_y": 84.0
+} ]
+DialogueTree = {
+"dialogue": [ {
+"Actor": "",
+"Dialogue": "That's awesome to hear!",
+"NodeName": "BasicDialogue2",
+"Ref": "",
+"next": 4
+}, {
+"Choices": [ {
+"Conditional": "",
+"Dialogue": "Not really.",
+"PassCondition": true,
+"ToolTip": "",
+"next": 2
+}, {
+"Conditional": "",
+"Dialogue": "Yeah, lets talk about it.",
+"PassCondition": true,
+"ToolTip": "",
+"next": 3
+} ],
+"Conditonal": false,
+"NodeName": "ChoiceDialogue2",
+"Ref": ""
+}, {
+"Actor": "",
+"Dialogue": "Ah.. that's okay. Lemme know if you need anything.",
+"NodeName": "BasicDialogue4",
+"Ref": "",
+"next": "End"
+}, {
+"Actor": "",
+"Dialogue": "Anything on your mind?",
+"NodeName": "BasicDialogue5",
+"Ref": ""
+}, {
+"Actor": "",
+"Dialogue": "Testing sequental.",
+"NodeName": "BasicDialogue6",
+"Ref": "",
+"next": "End"
+}, {
+"Actor": "",
+"Dialogue": "Wanna talk about it?",
+"NodeName": "BasicDialogue3",
+"Ref": "",
+"next": 1
+}, {
+"Choices": [ {
+"Conditional": "\"{test}\" == \"hello2\"",
+"Dialogue": "I'm okay.",
+"PassCondition": true,
+"ToolTip": "Test must be hello2",
+"next": 0
+}, {
+"Conditional": "false",
+"Dialogue": "I'm not feeling great.",
+"PassCondition": true,
+"ToolTip": "This is disabled",
+"next": 5
+}, {
+"Conditional": "true",
+"Dialogue": "I'm fantastic!",
+"PassCondition": true,
+"ToolTip": "This is not disabled",
+"next": 0
+} ],
+"Conditonal": false,
+"NodeName": "ChoiceDialogue",
+"Ref": ""
+}, {
+"Actor": "",
+"Dialogue": "Why hello. How are you today?",
+"NodeName": "BasicDialogue",
+"Ref": "",
+"next": 6
+} ],
+"start_index": 7
+}
+
+[node name="TestingWorld" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+"anims/New Anim" = SubResource( 1 )
+blend_times = [  ]
+
+[node name="TEst" type="AnimationPlayer" parent="." index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+"anims/New Anim2" = SubResource( 2 )
+blend_times = [  ]
+
+[node name="Dialogue" type="Node" parent="." index="2"]
+
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_icon": ExtResource( 3 )
+}
+DialogueResource = SubResource( 3 )
+RandomizeBeforeRandom = false
+
+[node name="Dialogue2" type="Node" parent="." index="3"]
+
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_icon": ExtResource( 3 )
+}
+DialogueResource = SubResource( 4 )
+RandomizeBeforeRandom = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="4"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="DialogueBasic" type="Panel" parent="CanvasLayer" index="0"]
+
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -270.0
+margin_top = -101.0
+margin_right = 270.0
+margin_bottom = -14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/DialogueBasic" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ChoiceBasic" type="Panel" parent="CanvasLayer" index="1"]
+
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -270.0
+margin_top = -146.0
+margin_right = 270.0
+margin_bottom = -14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ChoiceBasic" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 1
+
+[node name="NextTimer" type="Timer" parent="CanvasLayer" index="2"]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = true
+autostart = false
+
+[connection signal="Choice_Next" from="Dialogue2" to="." method="_on_Dialogue2_Choice_Next"]
+
+[connection signal="Conditonal_Data_Needed" from="Dialogue2" to="." method="_on_Dialogue2_Conditonal_Data_Needed"]
+
+[connection signal="Dialogue_Ended" from="Dialogue2" to="." method="_on_Dialogue2_Dialogue_Ended"]
+
+[connection signal="Dialogue_Next" from="Dialogue2" to="." method="_on_Dialogue2_Dialogue_Next"]
+
+[connection signal="Dialogue_Started" from="Dialogue2" to="." method="_on_Dialogue2_Dialogue_Started"]
+
+[connection signal="timeout" from="CanvasLayer/NextTimer" to="." method="_on_NextTimer_timeout"]
+
+

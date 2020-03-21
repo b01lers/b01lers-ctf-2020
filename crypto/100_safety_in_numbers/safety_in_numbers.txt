@@ -1,0 +1,9 @@
+Safety in numbers    (by dm)
+
+
+My friend says that this message is totally eavesdropper-safe...
+
+Users get: 
+  - enc.py
+  - flag.enc
+  - pubkey.pem

@@ -1,0 +1,25 @@
+service xwing
+{
+        disable                 = no
+        socket_type                     = stream
+        protocol                = tcp
+        wait                    = no
+        log_type                = FILE /var/log/xinetdlog
+        log_on_success                  = HOST PID EXIT DURATION
+        log_on_failure                  = HOST
+
+        # Change the username to the name of your challenge
+        user                    = meshuggah
+
+        bind                    = 0.0.0.0
+
+        # Change the server to your executable
+        server                  = /home/meshuggah/meshuggah.sh
+
+        type                    = UNLISTED
+
+        # Change the PORT to your desired challenge port
+        port                    = 1337
+
+        per_source              = 10
+}

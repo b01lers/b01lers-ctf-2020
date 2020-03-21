@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Life On Mars</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/life_on_mars.css') }}"
+    />
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/life_on_mars.js') }}"></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <h3>Discovered Life</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+          <li class="active">
+            <a href="/">Home</a>
+          </li>
+
+          <li>
+            <a
+              onclick="get_life('amazonis_planitia');"
+              href="javascript:void(0);"
+              >Amazonis Planitia</a
+            >
+          </li>
+
+          <li>
+            <a onclick="get_life('olympus_mons');" href="javascript:void(0);"
+              >Olympus Mons</a
+            >
+          </li>
+
+          <li>
+            <a onclick="get_life('tharsis_rise');" href="javascript:void(0);"
+              >Tharsis Rise</a
+            >
+          </li>
+
+          <li>
+            <a onclick="get_life('chryse_planitia');" href="javascript:void(0);"
+              >Chryse Planitia</a
+            >
+          </li>
+
+          <li>
+            <a onclick="get_life('arabia_terra');" href="javascript:void(0);"
+              >Arabia Terra</a
+            >
+          </li>
+
+          <li>
+            <a onclick="get_life('noachis_terra');" href="javascript:void(0);"
+              >Noachis Terra</a
+            >
+          </li>
+
+          <li>
+            <a onclick="get_life('hellas_basin');" href="javascript:void(0);"
+              >Hellas Basin</a
+            >
+          </li>
+
+          <li>
+            <a onclick="get_life('utopia_basin');" href="javascript:void(0);"
+              >Utopia Basin</a
+            >
+          </li>
+
+          <li>
+            <a onclick="get_life('hesperia_planum');" href="javascript:void(0);"
+              >Hesperia Planum</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div id="content" style="width:80%">
+        <div class="jumbotron text-center">
+          <h1 class="display-1">Life On Mars</h1>
+        </div>
+
+        <div class="container">
+          <h4 id="results">
+            This is a website about life on Mars. It includes much information
+            on various species in only some of the Martian terrain.
+          </h4>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

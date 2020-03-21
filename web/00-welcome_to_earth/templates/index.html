@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to Earth</title>
+  </head>
+  <body>
+    <h1>AMBUSH!</h1>
+    <p>You've gotta escape!</p>
+    <img src="{{ url_for('static', filename='img/f18.png') }}" alt="alien mothership" style="width:60vw;" />
+    <script>
+      document.onkeydown = function(event) {
+        event = event || window.event;
+        if (event.keyCode == 27) {
+          event.preventDefault();
+          window.location = "/chase/";
+        } else die();
+      };
+
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      async function dietimer() {
+        await sleep(10000);
+        die();
+      }
+
+      function die() {
+        window.location = "/die/";
+      }
+
+      dietimer();
+    </script>
+  </body>
+</html>

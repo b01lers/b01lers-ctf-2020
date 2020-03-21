@@ -1,0 +1,9 @@
+200-dollar lunch     (by dm)
+----------------
+
+Yeah, Bud, piece of cake if you say so. That's why we picked you. The data must be in one of those encrypted 
+messages I'm attaching. Get it to us within 48 hours or we'll hire someone else..
+
+Users get:
+  - capture.tar.gz
+  - enc.py

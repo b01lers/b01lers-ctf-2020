@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to Earth</title>
+    <script src="{{ url_for('static', filename='js/open_sesame.js') }}"></script>
+  </head>
+  <body>
+    <h1>YOU FOUND THE DOOR!</h1>
+    <p>How do you open it?</p>
+    <img src="{{ url_for('static', filename='img/door.jpg') }}" alt="door" style="width:60vw;" />
+    <script>
+      open(0);
+    </script>
+  </body>
+</html>

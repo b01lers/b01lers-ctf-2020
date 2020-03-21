@@ -1,0 +1,33 @@
+{
+	"armstrong": {
+		"name": "armstrong",
+		"points": "100",
+		"category": "CRYPTO",
+		"description": "Neil Armstrong. What a guy. But he was also a frat guy, and you know how they are.",
+		"files": [
+			"dist/book.txt"
+		],
+		"flag": "pctf{_th1nk_n31l_armstr0ng_ev3r_r0de_4_b1cycl3_4r0und_4nd_h4d_1t_st0len_and_put_1t_up_in_the_tr33s_1wood_h4ve_t0ssed_it_4ll_th3_w4y_to_th3_m00n}",
+		"backend": {
+			"server": true,
+			"docker": true,
+			"docker-config": {
+				"dockerfile": true,
+				"name:": "armstrong",
+				"restart": "always",
+				"ports": {
+					4001: {
+						"internal_port":4001,
+						"protocol":"tcp"
+					}
+				}
+			},
+			"docker-compose":false,
+			"make": false,
+			"share-libc": false,
+			"libc-path": null,
+			"docker-compile": false,
+			"docker-compile-files": null
+		}
+	}
+}

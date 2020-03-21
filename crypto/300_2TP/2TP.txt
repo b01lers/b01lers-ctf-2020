@@ -1,0 +1,7 @@
+2TP   (created by dm)
+
+Ookay, I reused the pad. So what?
+
+Users get:
+  - msg1.enc
+  - msg2.enc

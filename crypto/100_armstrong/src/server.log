@@ -1,0 +1,5 @@
+INFO:root:[+] Socket initialized on 0.0.0.0:4001
+DEBUG:root:[+] Waiting for connection
+INFO:root:[+] New socket thread started for 127.0.0.1:39580
+DEBUG:root:[+] Waiting for connection
+DEBUG:root:[+] Sent img data to 127.0.0.1:39580

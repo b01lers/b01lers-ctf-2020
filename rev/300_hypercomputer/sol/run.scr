@@ -1,0 +1,6 @@
+#!/bin/tcsh
+
+
+setenv LD_PRELOAD ./mylib.so    # overload sleep/usleep/gettimeofday/srand/rand
+
+exec $1   # execute our (potentially modified) version of the code
