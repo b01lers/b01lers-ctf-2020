@@ -1,0 +1,133 @@
+Reflections on B01lerCTF 2020 (by dm)
+=============================
+
+Apart from some initial glitches, the very first B01lerCTF (Mar 14-16, 
+2020) went pretty smoothly. I hope everyone had a great time. It was the 
+first CTF I ever contributed to, so here are some reflections that will be 
+fun to re-read in a decade's time. I had it easy as I did not have to deal 
+with anything else than designing some problems. Eleven of those made it to 
+the event (yay!).
+
+
+OLD BUT NOT FORGOTTEN was the first problem I added. The idea came months 
+prior while I was reading a site that discussed twenty-or-so different 
+punchcard formats. What struck me was how sparse the coding was - most 
+characters used only 1 or 2 holes (need to maintain mechanical rigidity). 
+Putting modern 12-bit binary data on cards felt rather meh; on the other 
+hand, double-punching looked far more interesting. I quickly checked 
+whether random words could be recovered that way and it worked surprisingly 
+well. It looked fitting to put actual code on the cards, so I looked up 
+COBOL, wrote my first ever program in it (a simple substitution cipher), 
+and there you got your challenge.
+
+2TP came next. If you solved it, you know the story. Ever since the first 
+crypto course it has been bugging me why pad reuse is such a big no-no. I 
+did try to recover random streams of words but generally it was not very 
+reliable. So I searched and read how to do it professionally using Markov 
+chains. In a couple hours I could whip up a simple solver that used 
+1,2,3,4-gram arrays, and with some nudging that was sufficient to solve 
+anything I threw at it (higher n-grams work much cleaner though). To save 
+some of your tedium, I picked an Easter egg for one of the texts, which in 
+retrospect was a mistake because it made cribbing viable. No hard regrets 
+though, one cannot foresee everything.
+
+DES-MMXX just sorta happened because I somehow became curious about the 
+complexity of breaking nested DES encryptions (2020 looked like a fitting 
+number). The difficulty does grow too rapidly though, so in the end nesting 
+lots of related-key encryptions looked cleaner for a challenge. Keyspace 
+was in the end restricted to 2^32 to keep running times reasonable if you 
+code in Python.
+
+CRYPTO-CROSSWORD was based on a 6x6 minicrossword I saw in the New York 
+Times that, remarkably, had no black squares at all. I just had to try a 
+CTF themed version of at least 5x5 in size. Turned out harder than I 
+thought - with a dictionary of many hundred words there were still no 
+solutions until I allowed for word reversals and also dropped the 
+constraint for the top row. Descriptions were straightforward, the only 
+surprise was that there are different base-85 encodings (we picked ascii85 
+eventually). The original idea was to use the top row as a Vigenere key; I 
+added lots of Xs in an attempt to confuse statistical analysis. But a0su 
+and maczilla found that an automated Vigenere solver could still decode the 
+ciphertext right away. So they switched the last step to a 5x5 Hill cipher 
+(luckily, the determinant was appropriate with A=0). Out of the usual 
+options, such as left vs right multiplication, or encrypting with the 
+matrix or its inverse, we picked the set that gives the answer when people 
+use DCode.fr. My only regret here is that people still got stuck on the 
+last step until we posted a hint :p
+
+I threw DIGITAL SLOTH into the mix to have at least one simple problem of 
+mine in there :) The idea was to just print the flag but have the code get 
+bogged down in the process. With local rev, the tricky part is to hide the 
+flag in the code. Amazingly, I got a sufficiently random sequence right 
+away from a simple two-variable recursive formula, and that sealed the 
+deal.
+ 
+HYPERCOMPUTER 1 & 2 got created because I felt guilty that none of my 
+problems actually fit the theme we had for the event. That said, I 
+misremembered, and made spaceship problems even though it should have been 
+trains for rev :o The good thing with remote rev is that there is no need 
+to obscure the flag, only the logic that gives the flag. I am not good at 
+rev but wanted to play with pure binary 0/1 Turing machines (no blanks, 
+etc), so that set the core idea. Hypercomputer 1 is meant to be rigged (you 
+do not need to fully reverse it). The right compilation flags were found by 
+accident - it turned out that with -O1 the compiler left all my dead test 
+code in there, which then became the main hint for the problem (I added 
+some symbols too). It would have been totally cool to use actual files for 
+the tape but that ran excruciatingly slowly :/ If you had played with 
+Turing machines, you probably recall how poorly some operations can scale 
+on them, like subtractions in O(n^2) (encoding dependent though). That is 
+totally not how it feels when you calculate on a sheet of paper. The main 
+point in Hypercomputer 2 was to see what one could do if the "tape" were 
+two-dimensional. The latter was written in C++ but I disabled inlining to 
+keep program flow saner. The finishing touch was to come up with little 
+poems with hints (hope you caught those).
+
+The idea for WHAT THE ELF came while I was verifying that Hypercomputer 1 
+was riggable. I got sidetracked by the question just how exactly the ELF 
+linker/loader knows what else needs to be loaded to run a binary. It was 
+natural to mess with that information and create doctored binaries that 
+fail to run. (Creating those was actually more work than what you had to do 
+to fix them :) I deliberately put all tweaks at the end of the names so 
+that invoking 'strings' in the terminal would not immediately reveal 
+anything suspicious. The flag was hidden using movfuscator (some of you 
+might have actually reversed that).
+
+200-DOLLAR LUNCH was made because it turned out that we needed some RSA 
+problem that was not immediately solvable using RsaCtfTool. I took a 
+standard problem and twisted it by what could be an honest mistake, so that 
+it did not work out of the box (no free lunch). Took a bit of tuning until 
+Yafu needed a couple minutes, but not much more, to factor the last step. 
+Hopefully it was educational.
+
+SAFETY IN NUMBERS was created to have a simple one-step RSA problem as 
+well. Low-exponent is always a natural choice for these but there was still 
+RsaCtfTool to contend with.. so I picked e=65537, which is safe in everday 
+settings, but here we had a VERY large public key. The only fly in the 
+ointment was that the usual Python tools parse such large keys rather 
+inefficiently - but they still work (openssl from the command line ran 
+lightning fast in comparison). Hopefully this served as additional message 
+that tools matter / know your tools.
+
+Finally, MATRYOSHKA was added as a fun play on QR codes. Originally I was 
+hoping to nest so many QR codes that one would have had to automate 
+decoding. But the format is too bloated (there is no way to turn off error 
+correction, for example), plus the largest image is capped at 177x177, and 
+after tiling I would have ended up with O(100 MB) image binaries anyway. So 
+in the end the doll had only 4 layers :/ I created QR codes with segno, and 
+it was all sunshine and roses until I started decoding the results... It 
+turns out that most QR code decoders assume that the binary data in the 
+image is actually text, and automatically apply a UTF-8 or whatever other 
+decoder they fancy at the very last step. Some allow for extraction of raw 
+data; however, that then also contains encoding information (mode nibble + 
+data length + actual raw bytes => again, know thy tools). I could have 
+base64 encoded everything but that felt like a copout; QR codes can encode 
+full 8-bit info afterall. In the end, I generated a bunch of test QR codes, 
+and verified that I can postprocess the "raw data" output from ZXing to 
+correctly extract the exact bytes I encoded. This is largely why the 
+problem was bumped to up to 200 pts.
+
+
+
+Now, I guess, some rest until B01lerCTF 2021... :)
+
+==END==
